@@ -1,4 +1,4 @@
-import { describeAction } from "./action.testHelpers";
+import { describeAction } from "./action.helper";
 
 import * as tick from "./tick";
 
