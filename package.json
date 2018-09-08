@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html",
-    "dev": "parcel src/index.html",
+    "dev": "concurrently -c yellow,magenta,cyan -n server,tests,types npm:watch-serve npm:watch-tests npm:watch-types",
     "mutation": "stryker",
-    "serve": "parcel src/index.html",
     "test": "jest",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "watch-serve": "parcel src/index.html",
+    "watch-tests": "jest --watch",
+    "watch-types": "tsc --noEmit --watch --preserveWatchOutput"
   },
   "author": "",
   "license": "ISC",
@@ -23,7 +25,6 @@
     "redux": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
     "@types/enzyme": "^3.1.13",
     "@types/enzyme-adapter-react-16": "^1.0.3",
     "@types/jest": "^23.3.2",
@@ -32,7 +33,7 @@
     "@types/react-dom": "^16.0.7",
     "@types/react-hyperscript": "^3.0.3",
     "@types/react-redux": "^6.0.7",
-    "babel-core": "^7.0.0-0",
+    "babel-core": "6",
     "babel-jest": "^23.4.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "concurrently": "^4.0.1",
