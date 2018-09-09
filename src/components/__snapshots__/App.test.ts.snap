@@ -2,12 +2,15 @@
 
 exports[`the app matches the snapshot 1`] = `
 <div>
-  <div>
+  <div
+    style="position:relative"
+  >
+    52
     <div
-      style="width:40px;height:60px;border:1px solid black"
-    >
-      52
-    </div>
+      style="width:40px;height:60px;border:1px solid black;background:radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+            radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #613 10px, rgba(96, 16, 48, 0) 11px),
+            #8a3;background-size:20px 20px"
+    />
     <button>
       draw
     </button>

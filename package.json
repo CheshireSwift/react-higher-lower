@@ -6,7 +6,8 @@
   "scripts": {
     "build": "parcel build src/index.html",
     "dev": "concurrently -c yellow,magenta,cyan -n server,tests,types npm:watch-serve npm:watch-tests npm:watch-types --default-input-target=tests",
-    "mutation": "stryker",
+    "check-all": "yarn type-check && yarn test && yarn mutate && yarn build",
+    "mutate": "stryker run",
     "test": "jest",
     "type-check": "tsc --noEmit",
     "watch-serve": "parcel src/index.html",

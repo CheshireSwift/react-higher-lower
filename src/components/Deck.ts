@@ -1,13 +1,13 @@
 import React from "react";
 
-import { div, button } from "react-hyperscript-helpers";
+import { div, button, h } from "react-hyperscript-helpers";
 import { Dispatch, bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { State } from "../state";
-import { cardStyle } from "./style";
 import { Card } from "../state/cards";
 import { draw, shuffle } from "../state/actions/cards";
+import { CardDisplay } from "./CardDisplay";
 
 interface DeckProps {
   cards: Card[];
@@ -21,8 +21,9 @@ export class Deck extends React.PureComponent<DeckProps> {
   }
 
   render() {
-    return div([
-      div({ style: { ...cardStyle } }, this.props.cards.length),
+    return div({ style: { position: "relative" } }, [
+      this.props.cards.length,
+      h(CardDisplay, { card: null }),
       button({ onClick: () => this.props.draw(this.props.cards[0]) }, "draw")
     ]);
   }
