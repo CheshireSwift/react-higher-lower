@@ -1,6 +1,6 @@
 import { div } from "react-hyperscript-helpers";
 
-import { Card, Rank, Suit } from "../state/cards";
+import { Card, Rank } from "../state/cards";
 
 interface CardDisplayProps {
   card: Card | null;

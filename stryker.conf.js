@@ -7,7 +7,7 @@ module.exports = function(config) {
     packageManager: "yarn",
     coverageAnalysis: "off",
     tsconfigFile: "tsconfig.json",
-    mutate: ["src/**/*.ts", "!src/**/*.@(test|helper|d).ts", "!src/main.ts"],
+    mutate: ["src/**/*.ts", "!src/**/*.*.ts", "!src/main.ts"],
     babelrcFile: ".babelrc",
     thresholds: { high: 100, low: 95, break: 90 }
   });
