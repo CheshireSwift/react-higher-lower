@@ -10,11 +10,11 @@ export function describeAction<Type, Rest>(
   desc: string,
   action: ActionCreator<Type, Rest>,
   type: string,
-  cases: TestCase<Rest>
+  cases: TestCase<Rest> = {}
 ): void {
   describe(desc, () => {
     it(`uses type "${type}"`, () => {
-      expect(action().type).toBe(type);
+      expect(action({}).type).toBe(type);
     });
 
     _.forEach(cases, (testCase, name) => {

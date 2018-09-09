@@ -2,7 +2,7 @@ import { h } from "react-hyperscript-helpers";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-import { rootReducer } from "../state/reducers";
+import { rootReducer } from "../state";
 import Layout from "./Layout";
 
 const store = createStore(rootReducer);

@@ -2,9 +2,16 @@
 
 exports[`the app matches the snapshot 1`] = `
 <div>
-  0
-  <button>
-    Clickyclicky
-  </button>
+  <div>
+    <div
+      style="width:40px;height:60px;border:1px solid black"
+    >
+      52
+    </div>
+    <button>
+      draw
+    </button>
+  </div>
+  <div />
 </div>
 `;

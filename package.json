@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html",
-    "dev": "concurrently -c yellow,magenta,cyan -n server,tests,types npm:watch-serve npm:watch-tests npm:watch-types",
+    "dev": "concurrently -c yellow,magenta,cyan -n server,tests,types npm:watch-serve npm:watch-tests npm:watch-types --default-input-target=tests",
     "mutation": "stryker",
     "test": "jest",
     "type-check": "tsc --noEmit",
     "watch-serve": "parcel src/index.html",
-    "watch-tests": "jest --watch",
+    "watch-tests": "jest --watch -u",
     "watch-types": "tsc --noEmit --watch --preserveWatchOutput"
   },
   "author": "",

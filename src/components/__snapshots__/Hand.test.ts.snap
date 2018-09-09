@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the Hand matches the snapshot 1`] = `
+<div>
+  <div
+    style="width:40px;height:60px;border:1px solid black;display:inline-block;margin-right:8px"
+  >
+    QH
+  </div>
+  <div
+    style="width:40px;height:60px;border:1px solid black;display:inline-block;margin-right:8px"
+  >
+    4C
+  </div>
+  <div
+    style="width:40px;height:60px;border:1px solid black;display:inline-block;margin-right:8px"
+  >
+    AS
+  </div>
+</div>
+`;

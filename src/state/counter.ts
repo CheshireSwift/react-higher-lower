@@ -1,4 +1,4 @@
-import { increment, decrement, set } from "../actions/tick";
+import { increment, decrement, set } from "./actions/tick";
 
 interface CounterState {
   count: number;
