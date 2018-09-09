@@ -36,5 +36,5 @@ jobs:
       # run tests!
       - run: yarn type-check
       - run: yarn test
-      - run: yarn mutate
+      - run: yarn mutate --maxConcurrentTestRunners 2
       - run: yarn build
