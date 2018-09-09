@@ -9,6 +9,7 @@ module.exports = function(config) {
     coverageAnalysis: "off",
     tsconfigFile: "tsconfig.json",
     mutate: ["src/**/*.ts", "!src/**/*.@(test|helper|d).ts", "!src/main.ts"],
-    babelrcFile: ".babelrc"
+    babelrcFile: ".babelrc",
+    thresholds: { high: 80, low: 60, break: 90 }
   });
 };
