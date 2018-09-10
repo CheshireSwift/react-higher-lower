@@ -4,3 +4,4 @@ export interface Card {
   rank: Rank;
   suit: Suit;
 }
+export type Guess = "HIGHER" | "LOWER";

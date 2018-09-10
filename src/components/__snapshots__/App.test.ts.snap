@@ -14,6 +14,12 @@ exports[`the app matches the snapshot 1`] = `
     <button>
       draw
     </button>
+    <button>
+      higher
+    </button>
+    <button>
+      lower
+    </button>
   </div>
   <div />
 </div>

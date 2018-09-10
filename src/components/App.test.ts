@@ -3,6 +3,7 @@ import { h } from "react-hyperscript-helpers";
 
 import App from "./App";
 import { Hand } from "./Hand";
+import { CardDisplay } from "./CardDisplay";
 
 describe("the app", () => {
   it("matches the snapshot", () => {
@@ -13,11 +14,13 @@ describe("the app", () => {
     const app = mount(h(App));
 
     expect(app.text()).toContain(52);
-    expect(app.find(Hand).prop("cards")).toHaveLength(0);
+    expect(app.find(Hand).find(CardDisplay)).toHaveLength(0);
 
-    app.find("button").simulate("click");
+    app
+      .findWhere(child => child.type() === "button" && child.text() === "draw")
+      .simulate("click");
 
     expect(app.text()).toContain(51);
-    expect(app.find(Hand).prop("cards")).toHaveLength(1);
+    expect(app.find(Hand).find(CardDisplay)).toHaveLength(1);
   });
 });

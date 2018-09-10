@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 import { Card, Rank, Suit } from "./cards";
-import { draw, shuffle } from "./actions/cards";
+import { draw, guess, shuffle } from "./actions/cards";
 
 type DeckState = Card[];
 
@@ -15,13 +15,14 @@ const sortedDeck = (): DeckState =>
     )
   );
 
-export const deck: Reducer<DeckState, typeof draw | typeof shuffle> = (
-  state = sortedDeck(),
-  action
-) => {
+export const deck: Reducer<
+  DeckState,
+  typeof draw | typeof guess | typeof shuffle
+> = (state = sortedDeck(), action) => {
   switch (action.type) {
     case "DRAW":
-      return _.reject(state, action.payload);
+    case "GUESS":
+      return _.reject(state, action.payload.card);
     case "SHUFFLE":
       return _.shuffle(state);
     default:

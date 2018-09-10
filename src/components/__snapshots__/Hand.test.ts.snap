@@ -3,19 +3,31 @@
 exports[`the Hand matches the snapshot 1`] = `
 <div>
   <div
-    style="display:inline-block;margin-right:8px;width:40px;height:60px;border:1px solid black;background:white;background-size:20px 20px"
+    style="display:inline-block;margin-right:8px"
   >
-    QH
+    <div
+      style="width:40px;height:60px;border:1px solid black;background:white;background-size:20px 20px"
+    >
+      QH
+    </div>
   </div>
   <div
-    style="display:inline-block;margin-right:8px;width:40px;height:60px;border:1px solid black;background:white;background-size:20px 20px"
+    style="display:inline-block;margin-right:8px"
   >
-    4C
+    <div
+      style="width:40px;height:60px;border:1px solid black;background:white;background-size:20px 20px"
+    >
+      4C
+    </div>
   </div>
   <div
-    style="display:inline-block;margin-right:8px;width:40px;height:60px;border:1px solid black;background:white;background-size:20px 20px"
+    style="display:inline-block;margin-right:8px"
   >
-    AS
+    <div
+      style="width:40px;height:60px;border:1px solid black;background:white;background-size:20px 20px"
+    >
+      AS
+    </div>
   </div>
 </div>
 `;

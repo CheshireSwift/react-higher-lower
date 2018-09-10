@@ -1,20 +1,20 @@
 import { render } from "enzyme";
 import { h } from "react-hyperscript-helpers";
 
-import { Card } from "../state/cards";
+import { Card, Guess } from "../state/cards";
 
 import { Hand } from "./Hand";
 
 describe("the Hand", () => {
-  const cards: Card[] = [
-    { suit: "H", rank: 12 },
-    { suit: "C", rank: 4 },
-    { suit: "S", rank: 1 }
+  const pairs: Array<{ card: Card; guess: Guess | null }> = [
+    { card: { suit: "H", rank: 12 }, guess: null },
+    { card: { suit: "C", rank: 4 }, guess: null },
+    { card: { suit: "S", rank: 1 }, guess: null }
   ];
   let hand: Cheerio;
 
   beforeEach(() => {
-    hand = render(h(Hand, { cards }));
+    hand = render(h(Hand, { pairs }));
   });
 
   it("matches the snapshot", () => {

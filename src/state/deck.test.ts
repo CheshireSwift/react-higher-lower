@@ -1,4 +1,4 @@
-import { draw, shuffle } from "./actions/cards";
+import { guess, shuffle, draw } from "./actions/cards";
 
 import { deck } from "./deck";
 import { Card } from "./cards";
@@ -223,6 +223,12 @@ describe("deck reducer", () => {
     const qh: Card = { rank: 12, suit: "H" };
     const as: Card = { rank: 1, suit: "S" };
     expect(deck([qh, as], draw(as))).toEqual([qh]);
+  });
+
+  it("removes cards when they are guessed", () => {
+    const qh: Card = { rank: 12, suit: "H" };
+    const as: Card = { rank: 1, suit: "S" };
+    expect(deck([qh, as], guess("HIGHER", as))).toEqual([qh]);
   });
 
   it("shuffles the deck", () => {
