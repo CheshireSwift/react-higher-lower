@@ -1,9 +1,8 @@
 import { Card } from "../cards";
 
-export const draw = ({ rank, suit }: Card) => ({
+export const draw = (card: Card) => ({
   type: "DRAW" as "DRAW",
-  rank,
-  suit
+  payload: card
 });
 
 export const shuffle = () => ({

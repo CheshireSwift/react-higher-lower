@@ -1,16 +1,18 @@
 import _ from "lodash";
 
-type ActionCreator<Type, Data> = (...args: any[]) => { type: Type } & Data;
+type ActionCreator<Type, P, E, M> = (
+  ...args: any[]
+) => { type: Type } & FluxFields<P, E, M>;
 
-interface TestCase<O> {
-  [name: string]: { args: any[]; output: O };
+interface TestCase<P, E, M> {
+  [name: string]: { args: any[] } & FluxFields<P, E, M>;
 }
 
-export function describeAction<Type, Rest>(
+export function describeAction<Type, P, E, M>(
   desc: string,
-  action: ActionCreator<Type, Rest>,
+  action: ActionCreator<Type, P, E, M>,
   type: string,
-  cases: TestCase<Rest> = {}
+  cases: TestCase<P, E, M> = {}
 ): void {
   describe(desc, () => {
     it(`uses type "${type}"`, () => {
@@ -19,7 +21,9 @@ export function describeAction<Type, Rest>(
 
     _.forEach(cases, (testCase, name) => {
       it(name, () => {
-        expect(action(...testCase.args)).toMatchObject(testCase.output);
+        expect(action(...testCase.args)).toMatchObject(
+          _.omit(testCase, "args")
+        );
       });
     });
   });

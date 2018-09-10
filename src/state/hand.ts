@@ -6,8 +6,7 @@ type HandState = Card[];
 export const hand: Reducer<HandState, typeof draw> = (state = [], action) => {
   switch (action.type) {
     case "DRAW":
-      const { suit, rank } = action;
-      return [...state, { suit, rank }];
+      return [...state, action.payload];
     default:
       return state;
   }

@@ -21,8 +21,7 @@ export const deck: Reducer<DeckState, typeof draw | typeof shuffle> = (
 ) => {
   switch (action.type) {
     case "DRAW":
-      const { rank, suit } = action;
-      return _.reject(state, { rank, suit });
+      return _.reject(state, action.payload);
     case "SHUFFLE":
       return _.shuffle(state);
     default:

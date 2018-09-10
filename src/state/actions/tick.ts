@@ -1,14 +1,14 @@
 export const increment = (amount: number) => ({
   type: "INCREMENT" as "INCREMENT",
-  amount
+  payload: { amount }
 });
 
 export const decrement = (amount: number) => ({
   type: "DECREMENT" as "DECREMENT",
-  amount
+  payload: { amount }
 });
 
 export const set = (value: number) => ({
   type: "SET" as "SET",
-  value
+  payload: { value }
 });

@@ -10,11 +10,11 @@ export const counter: Reducer<
 > = (state = { count: 0 }, action) => {
   switch (action.type) {
     case "INCREMENT":
-      return { ...state, count: state.count + action.amount };
+      return { ...state, count: state.count + action.payload.amount };
     case "DECREMENT":
-      return { ...state, count: state.count - action.amount };
+      return { ...state, count: state.count - action.payload.amount };
     case "SET":
-      return { ...state, count: action.value };
+      return { ...state, count: action.payload.value };
     default:
       return state;
   }

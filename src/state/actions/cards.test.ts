@@ -6,7 +6,7 @@ describe("card actions", () => {
   describeAction("draw", cards.draw, "DRAW", {
     "draws the specified card": {
       args: [{ suit: "H", rank: 12 }],
-      output: { suit: "H", rank: 12 }
+      payload: { suit: "H", rank: 12 }
     }
   });
 
