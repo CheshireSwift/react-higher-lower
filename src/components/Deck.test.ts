@@ -1,18 +1,15 @@
+import { Deck } from "./Deck";
+
 import { render, shallow, ShallowWrapper } from "enzyme";
 import { h } from "react-hyperscript-helpers";
 
-import { Deck } from "./Deck";
 import { Card } from "../state/cards";
 
 describe("the Deck", () => {
-  const cards: Card[] = [
-    { rank: 1, suit: "S" },
-    { rank: 3, suit: "C" },
-    { rank: 7, suit: "D" }
-  ];
-
   const props = {
-    cards,
+    topCard: { rank: 1, suit: "S" } as Card,
+    cardCount: 3,
+    disabled: false,
     draw: jest.fn(),
     guessHigher: jest.fn(),
     guessLower: jest.fn(),
@@ -35,32 +32,56 @@ describe("the Deck", () => {
   });
 
   it("shows the remaining card count", () => {
-    expect(deck.text()).toContain(cards.length);
+    expect(deck.text()).toContain(props.cardCount);
+  });
+
+  it("disables the buttons when the component is disabled", () => {
+    const deck = shallow(h(Deck, { ...props, disabled: true }));
+    ["draw", "higher", "lower"].forEach(buttonText => {
+      expect(findButton(deck, buttonText).prop("disabled")).toBeTruthy();
+    });
+  });
+
+  it("does not disable the buttons when component is not disabled", () => {
+    const deck = shallow(h(Deck, { ...props, disabled: false }));
+    ["draw", "higher", "lower"].forEach(buttonText => {
+      expect(findButton(deck, buttonText).prop("disabled")).toBeFalsy();
+    });
   });
 
   it("draws a card when the button is clicked", () => {
-    const drawButton = findButton(shallow(h(Deck, props)), "draw");
+    const draw = jest.fn();
+    const drawButton = findButton(shallow(h(Deck, { ...props, draw })), "draw");
     const onClick: any = drawButton.prop("onClick");
     onClick();
-    expect(props.draw).toHaveBeenCalled();
+    expect(draw).toHaveBeenCalled();
   });
 
   it("guesses high when the button is clicked", () => {
-    const higherButton = findButton(shallow(h(Deck, props)), "higher");
+    const guessHigher = jest.fn();
+    const higherButton = findButton(
+      shallow(h(Deck, { ...props, guessHigher })),
+      "higher"
+    );
     const onClick: any = higherButton.prop("onClick");
     onClick();
-    expect(props.guessHigher).toHaveBeenCalled();
+    expect(guessHigher).toHaveBeenCalled();
   });
 
   it("guesses low when the button is clicked", () => {
-    const lowerButton = findButton(shallow(h(Deck, props)), "lower");
+    const guessLower = jest.fn();
+    const lowerButton = findButton(
+      shallow(h(Deck, { ...props, guessLower })),
+      "lower"
+    );
     const onClick: any = lowerButton.prop("onClick");
     onClick();
-    expect(props.guessLower).toHaveBeenCalled();
+    expect(guessLower).toHaveBeenCalled();
   });
 
   it("shuffles the deck when mounted", () => {
-    shallow(h(Deck, props));
-    expect(props.shuffle).toHaveBeenCalled();
+    const shuffle = jest.fn();
+    shallow(h(Deck, { ...props, shuffle }));
+    expect(shuffle).toHaveBeenCalled();
   });
 });

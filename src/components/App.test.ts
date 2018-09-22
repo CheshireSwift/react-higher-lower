@@ -10,17 +10,20 @@ describe("the app", () => {
     expect(render(h(App))).toMatchSnapshot();
   });
 
-  it("moves a card from hand to deck when draw is clicked", () => {
+  it("starts with a card drawn", () => {
     const app = mount(h(App));
 
-    expect(app.text()).toContain(52);
-    expect(app.find(Hand).find(CardDisplay)).toHaveLength(0);
+    expect(app.text()).toContain(51);
+    expect(app.find(Hand).find(CardDisplay)).toHaveLength(1);
+  });
 
+  it("moves a card from hand to deck when draw is clicked", () => {
+    const app = mount(h(App));
     app
       .findWhere(child => child.type() === "button" && child.text() === "draw")
       .simulate("click");
 
-    expect(app.text()).toContain(51);
-    expect(app.find(Hand).find(CardDisplay)).toHaveLength(1);
+    expect(app.text()).toContain(50);
+    expect(app.find(Hand).find(CardDisplay)).toHaveLength(2);
   });
 });

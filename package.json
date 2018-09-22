@@ -6,14 +6,16 @@
   "scripts": {
     "build": "parcel build src/index.html",
     "check-all": "yarn type-check && yarn test && yarn mutate && yarn build",
-    "dev": "concurrently -c yellow,magenta,cyan -n server,tests,types npm:watch-serve npm:watch-tests npm:watch-types --default-input-target=tests",
+    "dev": "concurrently -c yellow,magenta,cyan,green -n server,tests,types,story npm:dev-serve npm:dev-tests npm:dev-types npm:dev-stories --default-input-target=tests",
+    "dev-serve": "parcel src/index.html",
+    "dev-stories": "yarn storybook --quiet",
+    "dev-tests": "jest --watch -u",
+    "dev-types": "tsc --noEmit --watch --preserveWatchOutput",
     "mutate": "stryker run",
+    "start": "yarn dev",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "jest",
-    "type-check": "tsc --noEmit",
-    "watch-serve": "parcel src/index.html",
-    "watch-tests": "jest --watch -u",
-    "watch-types": "tsc --noEmit --watch --preserveWatchOutput"
+    "type-check": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
@@ -24,11 +26,13 @@
     "react-dom": "^16.5.0",
     "react-hyperscript-helpers": "^2.0.0",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0"
+    "redux": "^4.0.0",
+    "reselect": "^3.0.1"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.4.10",
     "@storybook/addon-knobs": "^3.4.10",
+    "@storybook/addons": "^3.4.11",
     "@storybook/react": "^3.4.10",
     "@types/enzyme": "^3.1.13",
     "@types/enzyme-adapter-react-16": "^1.0.3",
@@ -45,6 +49,7 @@
     "babel-core": "6",
     "babel-jest": "^23.4.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-runtime": "6",
     "concurrently": "^4.0.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
