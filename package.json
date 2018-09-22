@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "parcel build src/index.html",
-    "check-all": "yarn type-check && yarn test && yarn mutate && yarn build",
+    "check-all": "rimraf .stryker-tmp && yarn type-check && yarn test && yarn mutate && yarn build",
     "dev": "concurrently -c yellow,magenta,cyan,green -n server,tests,types,story npm:dev-serve npm:dev-tests npm:dev-types npm:dev-stories --default-input-target=tests",
     "dev-serve": "parcel src/index.html",
     "dev-stories": "yarn storybook --quiet",
@@ -57,6 +57,7 @@
     "jest": "^23.5.0",
     "parcel-bundler": "^1.9.7",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "rimraf": "^2.6.2",
     "stryker": "^0.29.1",
     "stryker-api": "^0.21.0",
     "stryker-babel-transpiler": "^0.7.1",

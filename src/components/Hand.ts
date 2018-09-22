@@ -13,7 +13,7 @@ export const Hand = (props: HandProps) =>
   div(
     props.pairs.map(pair =>
       div({ style: { display: "inline-block", marginRight: 8 } }, [
-        pair.guess || null,
+        pair.guess,
         h(CardDisplay, { card: pair.card })
       ])
     )

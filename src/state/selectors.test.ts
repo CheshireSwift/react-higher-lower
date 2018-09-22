@@ -37,6 +37,30 @@ describe("selectors", () => {
       expect(selectors.isLost(incorrectLowerState)).toBe(true);
     });
 
+    it("is false if the two cards are tied (guessing HIGHER)", () => {
+      const tiedState: State = {
+        ...emptyState,
+        hand: [
+          { card: aceS, guess: null },
+          { card: { rank: 10, suit: "C" }, guess: "HIGHER" },
+          { card: { rank: 10, suit: "D" }, guess: "HIGHER" }
+        ]
+      };
+      expect(selectors.isLost(tiedState)).toBe(false);
+    });
+
+    it("is false if the two cards are tied (guessing LOWER)", () => {
+      const tiedState: State = {
+        ...emptyState,
+        hand: [
+          { card: aceS, guess: null },
+          { card: { rank: 10, suit: "C" }, guess: "HIGHER" },
+          { card: { rank: 10, suit: "D" }, guess: "LOWER" }
+        ]
+      };
+      expect(selectors.isLost(tiedState)).toBe(false);
+    });
+
     it("is false for a single card hand", () => {
       const singleCardState: State = {
         ...emptyState,
