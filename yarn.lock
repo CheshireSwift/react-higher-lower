@@ -441,10 +441,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-redux@^6.0.7":
-  version "6.0.7"
-  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-6.0.7.tgz#ac61cd8d137ca7205b831d66e279f42fe2a1c3cd"
-  integrity sha512-q/RakB1m0VLaVNYE9V+oKadXrKs5J7zfMJrsaB90/ubyQUzA45wag3HarJkKJuVNyTVp5N+buMfiwGE0XY6YVg==
+"@types/react-redux@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-redux/-/react-redux-7.0.0.tgz#8aaba50fb43739462c40e65e85f96eb8a550d494"
+  integrity sha512-p5/vXqS4+Gq7EYzNv4SMi/yy7cM/BUbZORlPXY6F8wCyo5EfPa3Gpf6CEQX+UtbK5g2mqgERqVYyutzZYKIpaQ==
   dependencies:
     "@types/react" "*"
     redux "^4.0.0"
