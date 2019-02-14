@@ -434,10 +434,10 @@
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-hyperscript@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@types/react-hyperscript/-/react-hyperscript-3.0.3.tgz#b765f9256a388a880dca794c7fb1a3deb8574c1b"
-  integrity sha512-vTw04I8SN5LuVwUm5OmtUd1TUcmL52UAEdXkv7Ny9kh79DDzJ6FYzPRnCRC4nYdpKixCNv9saYaoCAGUBKFdVQ==
+"@types/react-hyperscript@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/react-hyperscript/-/react-hyperscript-3.0.4.tgz#b7d4b357c018ac9d6b16dd543fb4c0209a23e91d"
+  integrity sha512-TZiUdoHJO5Sysw6hpS48CN9f2oDy2TEbrGr58JJACt0x9OZijH1bKCaXL6llk7QjCZWGsMSuyl6Jy4PhHcSjbw==
   dependencies:
     "@types/react" "*"
 
