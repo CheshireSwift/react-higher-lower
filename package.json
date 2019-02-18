@@ -63,7 +63,7 @@
     "stryker-babel-transpiler": "^0.7.1",
     "stryker-jest-runner": "^1.2.0",
     "stryker-typescript": "^0.14.0",
-    "ts-jest": "^23.1.4",
+    "ts-jest": "^24.0.0",
     "typescript": "^3.0.3",
     "utility-types": "^2.0.0"
   },
