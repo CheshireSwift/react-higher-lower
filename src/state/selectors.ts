@@ -1,7 +1,7 @@
-import * as _ from "lodash";
-import { createSelector } from "reselect";
+import * as _ from 'lodash';
+import { createSelector } from 'reselect';
 
-import { State } from ".";
+import { State } from '.';
 
 export const topCard = createSelector(
   (state: State) => state.deck,
@@ -18,9 +18,9 @@ export const isLost = createSelector(
 
     // lose if comparison is opposite of guess
     switch (last.guess) {
-      case "HIGHER":
+      case 'HIGHER':
         return last.card.rank < previous.card.rank;
-      case "LOWER":
+      case 'LOWER':
         return last.card.rank > previous.card.rank;
     }
   }
