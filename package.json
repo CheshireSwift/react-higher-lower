@@ -44,7 +44,7 @@
     "@types/react-hyperscript": "^3.0.3",
     "@types/react-redux": "^6.0.13",
     "@types/storybook__addon-actions": "^3.4.1",
-    "@types/storybook__addon-knobs": "^3.4.1",
+    "@types/storybook__addon-knobs": "^4.0.5",
     "@types/storybook__react": "^3.0.9",
     "awesome-typescript-loader": "^5.2.1",
     "babel-core": "6",
