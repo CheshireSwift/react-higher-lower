@@ -32,7 +32,7 @@
   "devDependencies": {
     "@storybook/addon-info": "^5.0.9",
     "@storybook/addon-knobs": "^5.0.9",
-    "@storybook/addons": "^3.4.11",
+    "@storybook/addons": "^5.0.9",
     "@storybook/react": "^3.4.10",
     "@types/cheerio": "^0.22.10",
     "@types/enzyme": "^3.1.13",
